@@ -4,7 +4,13 @@ const c = canvas.getContext('2d');
 canvas.width = 64 * 16
 canvas.height = 64 * 9
 
-
+const backgroundLevel1 = new Sprite({
+    position:{
+      x:0,
+      y:0,
+    }, 
+    imageSrc: 'img/backgroundLevel1.png'
+  })
 const player = new Player()
 const keys = {
     w: {
@@ -19,9 +25,8 @@ const keys = {
 }
 function animate (){
     window.requestAnimationFrame(animate)
+    backgroundLevel1.draw()
 
-    c.fillStyle = 'white'
-    c.fillRect(0,0,canvas.width,canvas.height)
     player.velocity.x=0
     if(keys.d.pressed)player.velocity.x = 5
     else if(keys.a.pressed)player.velocity.x =-5
