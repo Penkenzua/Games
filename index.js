@@ -12,6 +12,7 @@ const backgroundLevel1 = new Sprite({
     imageSrc: 'img/backgroundLevel1.png'
   })
 const player = new Player()
+
 const keys = {
     w: {
         pressed: false
