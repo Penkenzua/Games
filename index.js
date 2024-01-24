@@ -27,7 +27,9 @@ const keys = {
 function animate (){
     window.requestAnimationFrame(animate)
     backgroundLevel1.draw()
-
+    сollisionsBlocks.forEach(сollisionsBlock=>{
+        сollisionsBlock.draw()
+    }) 
     player.velocity.x=0
     if(keys.d.pressed)player.velocity.x = 5
     else if(keys.a.pressed)player.velocity.x =-5
