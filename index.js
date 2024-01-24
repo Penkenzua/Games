@@ -4,6 +4,25 @@ const c = canvas.getContext('2d');
 canvas.width = 64 * 16
 canvas.height = 64 * 9
 
+
+const сollisionsBlocks = []
+
+        const parsedCollisions = сollisionsLevel1.parse2D()
+        parsedCollisions.forEach((row,y) => {
+            row.forEach((symbol,x)=>{
+            if (symbol ===292){
+                сollisionsBlocks.push
+                (new CollisionsBlock({
+                    position:{
+                        x:x*64,
+                        y:y*64,
+                        },
+                }))
+            }
+        })
+            
+        })    
+        
 const backgroundLevel1 = new Sprite({
     position:{
       x:0,
