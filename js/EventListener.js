@@ -1,7 +1,7 @@
 window.addEventListener('keydown', (event)=>{
     switch(event.key){
         case 'w':
-            if(player.velocity.y ===0) player.velocity.y=-25   
+            if(player.velocity.y ===0) player.velocity.y=-17   
         break
             case 'a':
                 keys.a.pressed =true
