@@ -27,7 +27,7 @@ const player = new Player({
         },
         idleLeft:{
             frameRate:11,
-            frameBuffer:2,
+            frameBuffer:5,
             loop:true,
             imageSrc: './img/king/idleLeft.png',
         },
