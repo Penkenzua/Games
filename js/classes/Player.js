@@ -1,6 +1,7 @@
-class Player{
+class Player extends Sprite{
 
-    constructor(){
+    constructor({collisionBlocks =[],imageSrc, frameRate}){
+        super({imageSrc,frameRate})
         this.position ={
             x:200,
             y:200
@@ -9,32 +10,28 @@ class Player{
             x:0,
             y:0,
         }
-        this.width =25
-        this.height = 25
+
         this.sides = {
             bottom: this.position.y + this.height
         }
         this.gravity =1
         this.collisionBlocks = collisionBlocks
     }
-    draw(){
-        c.fillStyle ='red'
-        c.fillRect(this.position.x, this.position.y, this.width, this.height) 
-    }
+   
     update(){
+     
+        c.fillStyle = 'rgba(0,255,0,0.5)'
+        c.fillRect(this.position.x,this.position.y,this.width,this.height)
     this.position.x += this.velocity.x
     //Проверка горизонтальных столкновений
     this.checkForHorizontalCollisions()
     this.applyGravity()
+    this.hitbox ={
+        this.position
+    }
     this.checkForVerticalCollosions()
     }
-
     
-    applyGravity(){
-    //Применение гравитации
-    this.velocity.y +=this.gravity
-    this.position.y += this.velocity.y
-    }
     checkForHorizontalCollisions(){
         for (let i = 0; i < this.collisionBlocks.length; i++) {
         
@@ -44,7 +41,7 @@ class Player{
                this.position.y +this.height >= collisionBlock.position.y &&
                this.position.y<= collisionBlock.position.y + collisionBlock.height
                ){
-                   if(this.velocity.x<-0){
+                   if(this.velocity.x<-0){  
                        this.position.x=collisionBlock.position.x +collisionBlock.width+0.01
                        break
                    }
@@ -55,6 +52,11 @@ class Player{
             }
        }
     }
+    applyGravity(){
+        //Применение гравитации
+        this.velocity.y +=this.gravity
+        this.position.y += this.velocity.y
+        }
     checkForVerticalCollosions(){
         for (let i = 0; i < this.collisionBlocks.length; i++) {
         
@@ -71,7 +73,8 @@ class Player{
                    }
                    if (this.velocity.y>0){
                         this.velocity.y=0
-                       this.position.y= collisionBlock.position.y - this.width - 0.01
+                       this.position.y= collisionBlock.position.y - this.height - 0.01
+
                        break
                    }
             }
