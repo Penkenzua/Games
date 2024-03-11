@@ -34,7 +34,7 @@ const player = new Player({
         runRight:{
             frameRate:8,
             frameBuffer:4,
-            loop:true,
+            loop:false,
             imageSrc: './img/king/runRight.png',
         },
         runLeft:{
@@ -45,6 +45,17 @@ const player = new Player({
         },
     },  
 })
+const doors = [
+    new Sprite({
+        position:{
+            x:0,
+            y:0,
+        },
+        imageSrc:'./img/doorOpen.png',
+        frameRate:5,
+        frameBuffer: 5,
+    }),
+]
 
 const keys = {
     w: {
@@ -62,6 +73,10 @@ function animate (){
     backgroundLevel1.draw()
     collisionBlocks.forEach(сollisionsBlock=>{
         сollisionsBlock.draw()
+    }) 
+
+    doors.forEach(doors=>{
+        doors.draw()
     }) 
     player.velocity.x=0
 
