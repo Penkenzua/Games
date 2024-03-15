@@ -57,7 +57,7 @@ class Player extends Sprite {
     this.currentFrame = 0;
     this.image = this.animations[name].image;
     this.frameRate = this.animations[name].frameRate;
-    this.frameBuffer = this.animations[name].frameBuffer;
+    this.frameBuffer = this.animations[name].frameBuffer
     this.loop = this.animations[name].loop
     this.currentAnimation =  this.animations[name]
 }
@@ -81,7 +81,7 @@ class Player extends Sprite {
           collisionBlock.position.x &&
         this.hitbox.position.y + this.hitbox.height >=
           collisionBlock.position.y &&
-        this.hitbox.position.y <=
+        this.hitbox.position.y <
           collisionBlock.position.y + collisionBlock.height
       ) {
         if (this.velocity.x < -0) {

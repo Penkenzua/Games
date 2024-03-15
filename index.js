@@ -48,7 +48,7 @@ const player = new Player({
       frameBuffer: 4,
       loop: false,
       imageSrc: "./img/king/enterDoor.png",
-      onComlete: () => {
+      onComplete: () => {
         console.log('complete')
       },
     },
