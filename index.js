@@ -49,11 +49,11 @@ const player = new Player({
       loop: false,
       imageSrc: "./img/king/enterDoor.png",
       onComlete: () => {
-        
+        console.log('complete')
       },
     },
   },
-});
+})
 const doors = [
   new Sprite({
     position: {

@@ -59,7 +59,8 @@ class Player extends Sprite {
     this.frameRate = this.animations[name].frameRate;
     this.frameBuffer = this.animations[name].frameBuffer;
     this.loop = this.animations[name].loop
-  }
+    this.currentAnimation =  this.animations[name]
+}
   updateHitBox() {
     this.hitbox = {
       position: {
