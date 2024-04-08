@@ -12,7 +12,7 @@ const backgroundLevel1 = new Sprite({
     x: 0,
     y: 0,
   },
-  imageSrc: "./img/backgroundLevel1.png",
+  imageSrc: "./img/backgroundLevel1.png"
 });
 const player = new Player({
   collisionBlocks,
