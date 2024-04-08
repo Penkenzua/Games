@@ -50,6 +50,7 @@ const player = new Player({
       imageSrc: "./img/king/enterDoor.png",
       onComplete: () => {
         console.log('complete')
+        gsap.to(overlay, {opacity: 1})
       },
     },
   },
@@ -79,6 +80,9 @@ const keys = {
     pressed: false,
   },
 };
+const overlay = { 
+  opacity: 0,
+}
 function animate() {
   window.requestAnimationFrame(animate);
   backgroundLevel1.draw();
@@ -92,6 +96,13 @@ function animate() {
   player.handleInput(keys);
   player.draw();
   player.update();
+
+  c.save()
+  c.globalAlpha = overlay.opacity
+  c.fillStyle = 'black'
+  c.fillRect(0,0,canvas.width,canvas.height)
+  c.restore()
+
 }
 
 animate();
