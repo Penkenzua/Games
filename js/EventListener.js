@@ -2,6 +2,7 @@ window.addEventListener('keydown', (event)=>{
     if(player.preventInput) return
     switch(event.key){
         case 'w':
+           
             for (let i = 0; i < doors.length; i++) {
                 const door = doors[i]
                 if(

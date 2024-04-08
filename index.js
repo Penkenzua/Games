@@ -94,7 +94,7 @@ function animate() {
     doors.draw();
   });
   player.handleInput(keys);
-  player.draw();
+  player.draw()
   player.update();
 
   c.save()
